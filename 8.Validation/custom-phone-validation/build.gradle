@@ -1,0 +1,46 @@
+plugins {
+    id 'war'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenCentral()
+}
+
+dependencies {
+    //Java Servlet API
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+//Spring Core
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.3.14'
+
+//Spring Context
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.14'
+
+//Spring Beans
+    implementation group: 'org.springframework', name: 'spring-beans', version: '5.3.14'
+
+//Spring Web
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.14'
+
+//Spring Web MVC
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.14'
+
+//Thymeleaf spring5
+    implementation group: 'org.thymeleaf', name: 'thymeleaf-spring5', version: '3.0.14.RELEASE'
+
+//Thymeleaf Layout Dialect
+    implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '3.0.0'
+
+// Validation
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+    implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '7.0.2.Final'
+}
+
+test {
+    useJUnitPlatform()
+}

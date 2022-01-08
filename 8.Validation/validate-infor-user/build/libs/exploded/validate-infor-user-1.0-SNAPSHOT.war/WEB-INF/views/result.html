@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Congratulations</title>
+</head>
+<body>
+    <h1>Congratulations! You are old enough to sign up for this site.</h1>
+    <h3>Name: <span th:text="${user.name}"></span></h3>
+    <h3>Age: <span th:text="${user.age}"></span></h3>
+    <h3>Phone number: <span th:text="${user.phoneNumber}"></span></h3>
+</body>
+</html>

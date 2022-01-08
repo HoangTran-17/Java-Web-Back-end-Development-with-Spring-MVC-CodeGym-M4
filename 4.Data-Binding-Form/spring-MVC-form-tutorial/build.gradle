@@ -1,0 +1,31 @@
+plugins {
+    id 'war'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+//Spring Core
+    implementation group: 'org.springframework', name: 'spring-core', version: '5.3.14'
+//Spring Context
+    implementation group: 'org.springframework', name: 'spring-context', version: '5.3.14'
+//Spring Beans
+    implementation group: 'org.springframework', name: 'spring-beans', version: '5.3.14'
+//Spring Web
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.14'
+//Spring Web MVC
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.14'
+
+}
+
+test {
+    useJUnitPlatform()
+}
