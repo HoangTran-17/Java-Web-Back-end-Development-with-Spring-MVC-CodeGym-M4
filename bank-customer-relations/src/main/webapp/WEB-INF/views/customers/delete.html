@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Update customer</title>
+    <title>Suspension of customers</title>
     <th:block th:replace = "/layout/resource-cdn::resource-cdn"></th:block>
     <style>
         .table-title {
@@ -33,7 +33,7 @@
     <div class="table-title mb-4">
         <div class="row">
             <div class="col-sm-6">
-                <h1>Update customer information</h1>
+                <h1>Suspension of customers</h1>
             </div>
             <div class="col-sm-6">
                 <a href="/customers" class="btn btn-outline-light">
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <form th:action="@{/customers/edit}" th:object="${customer}" method="post">
+    <form th:action="@{/customers/delete}" th:object="${customer}" method="post">
         <fieldset class="row g-3">
             <input type="hidden" th:field="*{customerID}">
             <input type="hidden" th:field="*{currentBalance}">
@@ -64,9 +64,9 @@
                 <input type="text" class="form-control" th:field="*{address}">
             </div>
             <div class="col-md-12">
-                <button type="submit" class="btn btn-outline-secondary">
-                    <i class="fa fa-pencil-square" aria-hidden="true"></i>
-                    Save changes
+                <button type="submit" class="btn btn-outline-danger">
+                    <i class="fa fa-ban" aria-hidden="true"></i>
+                    Suspended
                 </button>
             </div>
         </fieldset>

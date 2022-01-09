@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<th:block th:fragment = "header">
+
+    .table-title {
+    background: #299be4;
+    color: #fff;
+    padding: 16px 30px;
+    border-radius: 3px 3px 0 0;
+    }
+
+    .table-title .btn {
+    float: right;
+    min-width: 50px;
+    outline: none !important;
+    margin-top: 10px;
+    margin-left: 10px;
+    }
+</th:block>
+
+<th:block th:fragment = "list">
+    table th {
+    background-color: #4CAF50 !important;
+    color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    }
+
+    table thead th {
+    border: 0 solid #ddd;
+    }
+
+    table tbody td {
+    border: 0 solid #ddd;
+    }
+</th:block>
+
+<th:block th:fragment = "create">
+    form label {
+    font-weight: bold;
+    }
+</th:block>
+
+<th:block th:fragment = "edit">
+</th:block>
+

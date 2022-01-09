@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Customer management</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <!-- Front awesome 5 - thư viện Icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+    <!-- <link rel="stylesheet" href="./Customer management_files/sweetalert2.min.css">  -->
+    <!-- <link rel="stylesheet" href="./Customer management_files/style.css"> -->
+    <!-- <script type="text/javascript" src="./Customer management_files/sweetalert2.min.js.tải xuống"></script> -->
+    <!-- <script type="text/javascript" src="./Customer management_files/jquery-3.6.0.min.js.tải xuống"></script> -->
+    <!-- <script type="text/javascript" src="./Customer management_files/jquery.validate-1.19.3.min.js.tải xuống"></script> -->
+    <!-- <script type="text/javascript" src="./Customer management_files/bootstrap.bundle.min.js.tải xuống"></script> -->
+    <!-- <script type="text/javascript" src="./Customer management_files/popper-v1.16.0.min.js.tải xuống"></script> -->
+    <!-- <script type="text/javascript" src="./Customer management_files/jquery.number.js.tải xuống"></script> -->
+
+    <style>
+        .table-title {
+            background: #299be4;
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .table-title .btn {
+            float: right;
+            min-width: 50px;
+            outline: none !important;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        table th {
+            background-color: #4CAF50 !important;
+            color: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table thead th {
+            border: 0 solid #ddd;
+        }
+
+        table tbody td {
+            border: 0 solid #ddd;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-5">
+                    <h1>List of customers</h1>
+                </div>
+                <div class="col-sm-7">
+                    <a href="/customers/create" class="btn btn-outline-light">
+                        <i class="far fa-plus-square" aria-hidden="true"></i>
+                        <span>Add New Customer</span>
+                    </a>
+                    <a href="/transfers" class="btn btn-outline-light">
+                        <i class="fa fa-history" aria-hidden="true"></i>
+                        <span>Transfer money Information</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>FullName</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Balance</th>
+                    <th colspan="5">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">175</td>
+                    <td>Cadman Deleon</td>
+                    <td>wyzoxigoma@mailinator.com</td>
+                    <td class="text-center">+1 (826) 972-7531</td>
+                    <td>Et quis eaque aliqua</td>
+                    <td class="text-end num-space">310 999 900</td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip" href="/customers/edit/175"
+                            data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip" href="/customers/deposit/175"
+                            data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip" href="/customers/withdraw/175"
+                            data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip" href="/customers/transfer/175"
+                            data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip" href="/customers/suspended/175"
+                            data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script type="text/javascript" src="./Customer management_files/custom-validation.js.tải xuống"></script>
+    <script type="text/javascript" src="./Customer management_files/app.js.tải xuống"></script>
+
+
+
+    <div class="selection_bubble_root" style="display: none;"></div>
+    <div id="rememberry__extension__root" style="all: unset;"></div>
+</body>
+
+</html>
