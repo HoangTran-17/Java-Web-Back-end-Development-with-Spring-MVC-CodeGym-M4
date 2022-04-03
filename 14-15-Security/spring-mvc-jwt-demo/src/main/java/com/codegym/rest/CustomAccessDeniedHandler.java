@@ -1,2 +1,6 @@
-package com.codegym.controller;public class CustomAccessDeniedHandler {
+package com.codegym.rest;
+
+public class CustomAccessDeniedHandler {
+
 }
+

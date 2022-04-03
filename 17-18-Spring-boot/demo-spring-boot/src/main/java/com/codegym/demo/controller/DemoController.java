@@ -1,4 +1,4 @@
-package com.codegym.demo;
+package com.codegym.demo.controller;
 
 public class DemoController {
 }

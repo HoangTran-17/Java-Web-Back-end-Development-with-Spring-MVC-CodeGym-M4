@@ -1,2 +1,14 @@
-package com.codegym.customermanagement.service;public interface IGeneralService {
+package com.codegym.customermanagement.service;
+
+
+import java.util.Optional;
+
+public interface IGeneralService<T> {
+    Iterable<T> findAll();
+
+    Optional<T> findById(Long id);
+
+    void save(T t);
+
+    void remove(Long id);
 }

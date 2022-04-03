@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Management</title>
+    <th:block th:replace = "/layout/resource-cdn::resource-cdn"></th:block>
+    <style >
+        .table-title {
+            background: #299be4;
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .table-title .btn {
+            float: right;
+            min-width: 50px;
+            outline: none !important;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        table th {
+            background-color: #4CAF50 !important;
+            color: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table thead th {
+            border: 0 solid #ddd;
+        }
+
+        table tbody td {
+            border: 0 solid #ddd;
+        }
+        <!--        /*<th:block th:insert = "/layout/style-header::header"></th:block>*/-->
+        <!--        /*<th:block th:insert = "/layout/style-header::list"></th:block>*/-->
+    </style>
+</head>
+
+<body>
+<div class="container">
+<!--    Header-->
+    <div class="table-title">
+        <div class="row">
+            <div class="col-sm-5">
+                <h1>List of customers</h1>
+            </div>
+            <div class="col-sm-7">
+                <a th:href="@{/customers/create}" class="btn btn-outline-light">
+                    <i class="far fa-plus-square" aria-hidden="true"></i>
+                    <span>Add New Customer</span>
+                </a>
+                <a th:href="@{/transfers}" class="btn btn-outline-light">
+                    <i class="fa fa-history" aria-hidden="true"></i>
+                    <span>Transfer money Information</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>FullName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Balance</th>
+                <th colspan="5">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="customer : ${customerList}">
+                <tr>
+                    <td th:text="${customer.customerID}"></td>
+                    <td th:text="${customer.fullName}"></td>
+                    <td th:text="${customer.email}"></td>
+                    <td th:text="${customer.phoneNumber}"></td>
+                    <td th:text="${customer.address}"></td>
+                    <td th:text="${customer.currentBalance}"></td>
+<!--                    <td><a th:href="@{/customers/edit-customer/__${customer.customerID}__ }">Edit</a></td>-->
+                    <td class="text-center">
+                        <a class="btn btn-outline-secondary" title="" data-toggle="tooltip"
+                           th:href="@{/customers/edit/__${customer.customerID}__ }"
+                           data-bs-original-title="Edit">
+                            <i class=" far fa-edit" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-success" title="" data-toggle="tooltip"
+                           th:href="@{/customers/deposit/__${customer.customerID}__ }"
+                           data-bs-original-title="Deposit">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+
+                    <td class="text-center">
+                        <a class="btn btn-outline-warning" title="" data-toggle="tooltip"
+                           th:href="@{/customers/withdraw/__${customer.customerID}__ }"
+                           data-bs-original-title="Withdraw">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-primary" title="" data-toggle="tooltip"
+                           th:href="@{/customers/transfer/__${customer.customerID}__ }"
+                           data-bs-original-title="Transfer">
+                            <i class="fas fa-exchange-alt" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-outline-danger" title="" data-toggle="tooltip"
+                           th:href="@{/customers/delete/__${customer.customerID}__ }"
+                           data-bs-original-title="Suspended">
+                            <i class="fa fa-ban" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

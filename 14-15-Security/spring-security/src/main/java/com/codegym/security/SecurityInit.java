@@ -1,2 +1,7 @@
-package com.codegym.security;public class SecurityInit {
+package com.codegym.security;
+
+import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
+
+public class SecurityInit extends AbstractSecurityWebApplicationInitializer {
+
 }

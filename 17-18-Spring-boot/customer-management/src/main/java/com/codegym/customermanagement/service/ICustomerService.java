@@ -1,2 +1,6 @@
-package com.codegym.customermanagement.service;public interface ICustomerService {
+package com.codegym.customermanagement.service;
+
+import com.codegym.customermanagement.model.Customer;
+
+public interface ICustomerService extends IGeneralService<Customer> {
 }

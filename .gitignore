@@ -44,3 +44,5 @@ atlassian-ide-plugin.xml
 
 # VS Code
 .vscode/
+0_IMPORTANT_PROJECTS/data-structures/gradlew.bat
+0_IMPORTANT_PROJECTS/data-structures/build.gradle

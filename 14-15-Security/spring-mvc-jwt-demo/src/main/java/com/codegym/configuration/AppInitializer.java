@@ -1,5 +1,6 @@
 package com.codegym.configuration;
 
+import com.codegym.security.SecurityConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 //Khởi tạo môi trường dự án
 //thay thế file web.xml nếu dùng cấu hình .xml
@@ -7,12 +8,12 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{AppConfiguration.class};
+        return new Class[]{SecurityConfig.class};
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[0];
+        return new Class[]{AppConfiguration.class};
     }
 
     @Override

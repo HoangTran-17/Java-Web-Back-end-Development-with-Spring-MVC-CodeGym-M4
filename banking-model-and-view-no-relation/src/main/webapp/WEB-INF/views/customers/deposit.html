@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit</title>
+    <th:block th:replace = "/layout/resource-cdn::resource-cdn"></th:block>
+    <style>
+        .table-title {
+            background: #299be4;
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .table-title .btn {
+            float: right;
+            min-width: 50px;
+            outline: none !important;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+        /*th:insert="/layout/style-header::header"*/
+        /*th:insert="/layout/style-header::create"*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="table-title mb-4">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>Deposit money into customer's account</h2>
+                </div>
+                <div class="col-sm-4">
+                    <a href="/customers" class="btn btn-outline-light">
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                        <span>Customer list</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <form th:action="@{/customers/deposit}" th:object="${customer}" method="post">
+            <fieldset class="row g-3">
+                <input type="hidden" th:field="*{phoneNumber}">
+                <input type="hidden" th:field="*{email}">
+                <input type="hidden" th:field="*{address}">
+
+                <div class="mb-3 col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-form-label">Customer ID</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" readonly id="customerId" th:field="*{customerID}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-form-label">Full Name</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" readonly id="fullName" th:field="*{fullName}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-form-label">Current balance ($)</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control num-space" readonly id="balance" th:field="*{currentBalance}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-form-label">Transaction Amount ($)</label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control num-space" maxlength="11" id="transactionAmount" name="transactionAmount" value="" />
+                            <!--                            <p th:if="${#fields.hasErrors('transactionAmount')}" th:errorclass="th-error" th:errors="*{transactionAmount}">Name Error</p>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3 col-md-12">
+                    <div class="form-group row">
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-outline-success">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                Deposit
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="footer">
+
+        <th:block>
+            <div id="message-alert">
+                <div th:if="${message}" class="alert-success">
+                    <h3 th:text="${message}"></h3>
+                </div>
+<!--                <div th:if="${error}" class="alert-danger hide">-->
+<!--                    <h5>Please correct errors below:</h5>-->
+<!--                    <ul>-->
+<!--                        <th:block th:each="er : ${error}">-->
+<!--                            <li th:error="${er}">Name Error</li>-->
+<!--                        </th:block>-->
+<!--                    </ul>-->
+<!--                </div>-->
+            </div>
+        </th:block>
+
+    </div>
+</body>
+</html>

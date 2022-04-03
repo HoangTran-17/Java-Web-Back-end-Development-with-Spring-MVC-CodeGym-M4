@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+</head>
+<body>
+<h1 th:text="${customer.name}"></h1>
+<form th:action="@{/customer/update}" th:method="post" th:object="${customer}">
+    <h1>Customer Information</h1>
+
+    <input th:type="hidden" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Id</td>
+            <td th:text="*{id}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input th:type="text" th:field="*{name}">
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <label>
+                    <input th:type="text" th:field="*{email}">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>
+                <input th:type="text" th:field="*{address}">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input th:type="submit" th:name="Update"/>
+            </td>
+        </tr>
+    </table>
+</form>
+<a th:href="@{/customer/list}">Back to list</a>
+</body>
+</html>
